@@ -3,6 +3,7 @@
 #include "fasttext.h"
 #include "real.h"
 #include <streambuf>
+#include <cstring>
 
 extern "C" {
 

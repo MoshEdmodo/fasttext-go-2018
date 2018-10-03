@@ -1,6 +1,6 @@
 package fasttextgo
 
-// #cgo LDFLAGS: -L${SRCDIR} -lfasttext -lstdc++
+// #cgo LDFLAGS: -L${SRCDIR} -lfasttext -lstdc++ -lm
 // #include <stdlib.h>
 // void load_model(char *path);
 // int predict(char *query, float *prob, char *buf, int buf_sz);
@@ -12,7 +12,7 @@ import (
 
 // LoadModel - load FastText model
 func LoadModel(path string) {
-	C.load_model(C.CString("fasttext_search_category.clf.CLF.bin"))
+	C.load_model(C.CString(path))
 }
 
 // Predict - predict
